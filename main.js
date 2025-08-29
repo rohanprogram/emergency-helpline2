@@ -51,3 +51,18 @@ const clearBtn = document.getElementById("clear-btn").
 addEventListener("click",function(){
     document.getElementById("history-container").innerText = ""
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+  const copyCounter = document.getElementById("copy"); 
+  let count = 0;
+
+  const copyButtons = document.querySelectorAll("#copy-btn, .copy-btn");
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener("click", function () {
+      count++;
+      copyCounter.querySelector("span").textContent = count + " copy";
+      alert("Copy count is now: " + count);
+    });
+  });
+});
